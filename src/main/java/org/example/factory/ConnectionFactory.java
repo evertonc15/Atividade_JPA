@@ -13,7 +13,7 @@ public class ConnectionFactory {
 
     public ConnectionFactory() {
         entityManagerFactory =
-                Persistence.createEntityManagerFactory("atividade_JPA");
+                Persistence.createEntityManagerFactory("atividadejpa");
     }
 
     public EntityManager getEntityManager() {

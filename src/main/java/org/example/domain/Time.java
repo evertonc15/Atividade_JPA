@@ -11,6 +11,20 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@NamedQueries({
+        @NamedQuery(
+                name = "Time.findByNome",
+                query = "SELECT t FROM Time t WHERE t.nome = :nome"
+        ),
+        @NamedQuery(
+                name = "Time.findByJogadorNome",
+                query = "SELECT t FROM Time t JOIN t.jogadores j WHERE j.nome = :nomeJogador"
+        ),
+        @NamedQuery(
+                name = "Time.findCampeonatos",
+                query = "SELECT c FROM Time t JOIN t.campeonatos c WHERE t.id = :timeId"
+        )
+})
 public class Time {
 
     @Id
