@@ -71,7 +71,7 @@ public class JogadorService {
         return query.getSingleResult();
     }
 
-    public List<Jogador> findByStatus(Status status) {
+    public List<Jogador> findByStatus(String status) {
         TypedQuery<Jogador> query = em.createQuery(
                 "SELECT j FROM Jogador j WHERE j.status = :status", Jogador.class
         );
@@ -81,7 +81,7 @@ public class JogadorService {
 
     public  List<Jogador> findByTime(String nomeTime) {
         TypedQuery<Jogador> query = em.createQuery(
-                "SELECT j FROM Jogador j WHERE j.time = :nomeTime", Jogador.class
+                "SELECT j FROM Jogador j WHERE j.time.nome = :nomeTime", Jogador.class
         );
         query.setParameter("nomeTime", nomeTime);
         return query.getResultList();
