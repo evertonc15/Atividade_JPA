@@ -1,10 +1,7 @@
 package org.example.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Data
@@ -22,4 +19,5 @@ public class Tecnico {
     @OneToOne
     @JoinColumn(name = "time_id")
     private Time time;
+
 }

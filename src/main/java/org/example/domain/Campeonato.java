@@ -1,10 +1,7 @@
 package org.example.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.Set;
@@ -26,4 +23,5 @@ public class Campeonato {
 
     @ManyToMany(mappedBy = "campeonatos")
     private Set<Time> times;
+
 }

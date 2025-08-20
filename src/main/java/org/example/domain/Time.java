@@ -39,11 +39,12 @@ public class Time {
     @OneToOne(mappedBy = "time", cascade = CascadeType.ALL)
     private Tecnico tecnico;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "time_campeonato",
             joinColumns = @JoinColumn(name = "time_id"),
             inverseJoinColumns = @JoinColumn(name = "campeonato_id")
     )
     private Set<Campeonato> campeonatos;
+
 }
